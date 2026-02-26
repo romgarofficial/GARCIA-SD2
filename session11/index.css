@@ -8,3 +8,11 @@
     width: 300px;
     height: auto;
 }
+
+.projects:hover{
+    letter-spacing: 12px !important;
+    font-weight: normal !important;
+    cursor: pointer;
+    color: rgb(255, 204, 0) !important;
+    transition: all 0.6s ease;
+}
