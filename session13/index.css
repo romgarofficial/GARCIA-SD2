@@ -1,0 +1,7 @@
+.tools{
+    max-height: auto;
+    max-width: 320px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    object-fit:cover;
+}
