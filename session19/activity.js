@@ -30,6 +30,6 @@
 		- This function should return a boolean.
 
 		Create a global variable called outside of the function called isPassingScore.
-			-This variable should be able to receive and store the boolean result of the checker function.
-			-Log the value of the isPassingScore variable in the console.
+		-This variable should be able to receive and store the boolean result of the checker function.
+		-Log the value of the isPassingScore variable in the console.
         */
