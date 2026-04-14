@@ -86,3 +86,83 @@ trex.makeSound();
 
 console.log(person.contactNumber[1]);
 console.log(person.address.brgy);
+
+// [SECTION] Pokemon
+
+function Pokemon(name, level, health, mana){
+    this.name = name;
+    this.level = level;
+    this.health = health * level;
+    this.mana = mana;
+
+    this.tackle = function(target){
+        let damage = 20;
+        console.log(`${this.name} used tackle attack!`);
+        target.health -= damage;
+    }
+
+    this.useHealPotion = function(){
+        let totalHealth = 100 * this.level;
+        if(this.health < totalHealth){
+            if((this.health + 150) >= totalHealth){
+                this.health = totalHealth;
+                console.log(`${this.name} HEALTH: ${this.health}`);
+            }else{
+                this.health += 150;
+                console.log(`${this.name} HEALTH: ${this.health}`);
+            }
+        }else{
+            console.log(`${this.name}'s health is full`);
+        }
+    }
+
+    this.useSkill1 = function(target){
+        if(this.name == "Pikachu"){
+            if(this.mana < 50){
+                console.log(`${this.name}'s mana is not enough! MANA: ${this.mana}`);
+            }else{
+                let damage = 150;
+                console.log(`${this.name} used Thunderbolt!`);
+                target.health -= damage;
+                this.mana -= 50;
+                console.log(`${this.name} mana: ${this.mana}. ${target.name} health: ${target.health}`);
+            }
+        }else if(this.name == "Charmander"){
+            if(this.mana < 50){
+                console.log(`${this.name}'s mana is not enough! MANA: ${this.mana}`);
+            }else{
+            let damage = 150;
+            console.log(`${this.name} used Flame Thrower!`);
+            target.health -= damage;
+            this.mana -= 50;
+            console.log(`${this.name} mana: ${this.mana}. ${target.name} health: ${target.health}`);
+            }
+        }
+    }
+}
+
+let pikachu = new Pokemon("Pikachu", 5, 100, 100);
+console.log(pikachu);
+
+let charmander = new Pokemon("Charmander", 5, 100, 100);
+console.log(charmander);
+
+pikachu.tackle(charmander);
+pikachu.tackle(charmander);
+pikachu.tackle(charmander);
+
+console.log(charmander);
+
+charmander.tackle(pikachu);
+console.log(pikachu);
+
+charmander.useSkill1(pikachu);
+charmander.useSkill1(pikachu);
+charmander.useSkill1(pikachu);
+
+pikachu.useHealPotion();
+pikachu.useHealPotion();
+pikachu.useHealPotion();
+pikachu.useHealPotion();
+pikachu.useHealPotion();
+console.log(pikachu);
